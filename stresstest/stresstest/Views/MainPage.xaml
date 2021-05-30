@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:stresstest.Views"
+            x:Class="stresstest.Views.MainPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="#0099ff"
+            android:TabbedPage.BarItemColor="Black"
+            android:TabbedPage.BarSelectedItemColor="White"
+            >
+
+    <TabbedPage.Children>
+        <NavigationPage Title="btn1"  Icon="creativity1.png">
+            <x:Arguments>
+                <views:ItemsPage />
+            </x:Arguments>
+        </NavigationPage>
+        
+        <NavigationPage Title="btn2"  Icon="modeling1.png">
+            <x:Arguments>
+                <views:AboutPage />
+            </x:Arguments>
+            
+        </NavigationPage>
+
+        <NavigationPage Title="btn3"  Icon="tablet1.png">
+            <x:Arguments>
+                <views:ApisPage />
+            </x:Arguments>
+           
+        </NavigationPage>
+
+    </TabbedPage.Children>
+    
+</TabbedPage>
