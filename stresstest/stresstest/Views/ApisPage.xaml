@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:stresstest.ViewModels"
              x:Class="stresstest.Views.ApisPage"
-             Title="{Binding Title}">
+             NavigationPage.HasNavigationBar="False">
 
 
     <ContentPage.BindingContext>
@@ -19,16 +19,16 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15" >
-            <Button BackgroundColor="{StaticResource Primary}"
+        <StackLayout Spacing="20" Padding="20,40,20,20" BackgroundColor="Green" >
+            <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
                         TextColor="White" Text="Camera" Command="{Binding GetContacts}" />
-            <Button BackgroundColor="{StaticResource Primary}"
+            <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
                         TextColor="White" Text="Gallery" Clicked="Button_Clicked"/>
-            <Button BackgroundColor="{StaticResource Primary}"
+            <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
                         TextColor="White" Text="GPS" />
-            <Button BackgroundColor="{StaticResource Primary}"
+            <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
                         TextColor="White" Text="Calendar" />
-            <Button BackgroundColor="{StaticResource Primary}"
+            <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
                         TextColor="White" Text="Contacts" />
         </StackLayout>
     </ContentPage.Content>

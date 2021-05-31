@@ -19,7 +19,6 @@ namespace stresstest.ViewModels
             }
         }
 
-        
 
     }
 }

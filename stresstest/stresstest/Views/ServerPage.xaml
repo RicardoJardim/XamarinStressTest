@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="stresstest.Views.ServerPage"
+             xmlns:vm="clr-namespace:stresstest.ViewModels"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:ServerViewModel />
+    </ContentPage.BindingContext>
+
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#0099ff</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <Grid Padding="20,40,20,20" Background="red">
+            <StackLayout Spacing="20"  VerticalOptions="CenterAndExpand">
+                <ContentView  BackgroundColor="Green"  WidthRequest="230" HeightRequest="230" HorizontalOptions="CenterAndExpand" BindableLayout.ItemsSource="{Binding Items}" >
+
+</ContentView>
+                <StackLayout Spacing="10" Padding="15" >
+                      <Button BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" Text="FETCHDATA" CornerRadius="10" Command="{Binding GetData}"/>
+                      <Button BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" Text="CREATE VIEWS" CornerRadius="10"/>
+                    <Button BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" Text="CREATE BUTTONS" CornerRadius="10"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

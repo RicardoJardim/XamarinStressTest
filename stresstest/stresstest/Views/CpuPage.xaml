@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="stresstest.Views.CpuPage"  xmlns:vm="clr-namespace:stresstest.ViewModels"
+             NavigationPage.HasNavigationBar="False" >
+     <ContentPage.BindingContext>
+        <vm:CpuViewModel />
+    </ContentPage.BindingContext>
+
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#0099ff</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content >
+        <Grid Padding="20,35,20,20" Background="yellow">
+            <StackLayout Spacing="20"  VerticalOptions="CenterAndExpand">
+
+                <Label Text="{Binding LabelText, StringFormat='Result = {0}'}" FontSize="Title" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+                <Button BackgroundColor="{StaticResource Primary}"
+                    TextColor="White" Text="Start" CornerRadius="10" Command="{Binding RunTest}"/>
+               
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

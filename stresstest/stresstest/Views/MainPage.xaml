@@ -13,20 +13,20 @@
             >
 
     <TabbedPage.Children>
-        <NavigationPage Title="btn1"  Icon="creativity1.png">
+        <NavigationPage Title="btn1"  Icon="creativity1.png" NavigationPage.HasNavigationBar="False">
             <x:Arguments>
-                <views:ItemsPage />
+                <views:CpuPage />
             </x:Arguments>
         </NavigationPage>
         
-        <NavigationPage Title="btn2"  Icon="modeling1.png">
+        <NavigationPage Title="btn2"  Icon="modeling1.png" NavigationPage.HasNavigationBar="False">
             <x:Arguments>
-                <views:AboutPage />
+                <views:ServerPage />
             </x:Arguments>
             
         </NavigationPage>
 
-        <NavigationPage Title="btn3"  Icon="tablet1.png">
+        <NavigationPage Title="btn3"  Icon="tablet1.png" NavigationPage.HasNavigationBar="False">
             <x:Arguments>
                 <views:ApisPage />
             </x:Arguments>
