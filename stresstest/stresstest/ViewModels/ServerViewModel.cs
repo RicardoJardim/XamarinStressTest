@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using stresstest.Models;
 using stresstest.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -9,39 +11,11 @@ namespace stresstest.ViewModels
 {
     public class ServerViewModel: BaseViewModel
     {
-        //private List<BoxView> items = new List<BoxView>();
+        
+        public ObservableCollection<int> Views { get; set; }
+        public ObservableCollection<int> Btns { get; set; }
 
-        //public List<BoxView> Items
-        //{
-        //    get => items;
-        //    set
-        //    {
-
-        //        items = value;
-        //        OnPropertyChanged(nameof(Items));
-
-        //    }
-        //}
         private static FileService fileService = new FileService();
-
-        public ICommand CreateViews
-        {
-            get
-            {
-
-                return new Command(async () => await FetchData());
-            }
-        }
-
-        public ICommand CreateBtns
-        {
-            get
-            {
-
-                return new Command(async () => await FetchData());
-            }
-        }
-
 
         public ICommand GetData
         {
@@ -52,22 +26,49 @@ namespace stresstest.ViewModels
             }
         }
 
+        public ICommand CreateViews
+        {
+            get
+            {
+
+                return new Command(() => AddViews());
+            }
+        }
+
+        public ICommand CreateBtns
+        {
+            get
+            {
+
+                return new Command( () => AddBtns());
+            }
+        }
+
         public ServerViewModel()
         {
-           
+            Views = new ObservableCollection<int>();
+            Btns = new ObservableCollection<int>();
         }
 
         private void AddViews()
         {
-            var view = new BoxView {
-                BackgroundColor = Color.Yellow,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand
+            for (int i = 1; i <= 1000; i++)
+            {
+                Views.Add(i);
 
-            };
-           
+            }
+            Console.WriteLine("ADD VIEWS: " + Views.Count);
 
+        }
 
+        private void AddBtns()
+        {
+            for (int i = 1; i <= 1000; i++)
+            {
+                Btns.Add(i);
+
+            }
+            Console.WriteLine("ADD Btns: " + Btns.Count);
         }
 
         private async Task<bool> FetchData()
@@ -90,6 +91,7 @@ namespace stresstest.ViewModels
 
             return await Task.FromResult(true);
         }
+
         private void ProcessResponse(string from,string response)
         {
             _ = Task.Run(async () =>

@@ -19,16 +19,42 @@
     <ContentPage.Content>
         <Grid Padding="20,40,20,20" Background="red">
             <StackLayout Spacing="20"  VerticalOptions="CenterAndExpand">
-                <ContentView  BackgroundColor="Green"  WidthRequest="230" HeightRequest="230" HorizontalOptions="CenterAndExpand" BindableLayout.ItemsSource="{Binding Items}" >
+                <AbsoluteLayout   WidthRequest="230" HeightRequest="230" HorizontalOptions="CenterAndExpand"  >
 
-</ContentView>
+                    <ContentView VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" >
+                        <CollectionView x:Name="ItemsCollectionView"
+                        ItemsSource="{Binding Views}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ContentView Padding="10" Background="green" WidthRequest="230" HeightRequest="230">
+                                    
+                                </ContentView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </ContentView>
+
+                    <ContentView VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" >
+                        <CollectionView x:Name="ItemsCollectionBtns"
+                        ItemsSource="{Binding Btns}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                 <Button Background="yellow" WidthRequest="230" HeightRequest="230" Text="click me"></Button>
+                     
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </ContentView>
+                    
+
+                </AbsoluteLayout>
                 <StackLayout Spacing="10" Padding="15" >
                       <Button BackgroundColor="{StaticResource Primary}"
                         TextColor="White" Text="FETCHDATA" CornerRadius="10" Command="{Binding GetData}"/>
                       <Button BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" Text="CREATE VIEWS" CornerRadius="10"/>
+                        TextColor="White" Text="CREATE VIEWS" CornerRadius="10" Command="{Binding CreateViews}"/>
                     <Button BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" Text="CREATE BUTTONS" CornerRadius="10"/>
+                        TextColor="White" Text="CREATE BUTTONS" CornerRadius="10" Command="{Binding CreateBtns}"/>
                 </StackLayout>
             </StackLayout>
         </Grid>

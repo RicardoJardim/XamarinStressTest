@@ -14,8 +14,6 @@ namespace stresstest.ViewModels
 
         public ApisViewModel()
         {
-            Title = "Apis";
-
         }
         public ICommand GetCamera
         {
