@@ -21,15 +21,15 @@
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="20,40,20,20" BackgroundColor="Green" >
             <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
-                        TextColor="White" Text="Camera" Command="{Binding GetContacts}" />
+                        TextColor="White" Text="Camera" Command="{Binding GetCamera}" />
             <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
-                        TextColor="White" Text="Gallery" Clicked="Button_Clicked"/>
+                        TextColor="White" Text="Gallery" Command="{Binding GetGallery}"  />
             <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
-                        TextColor="White" Text="GPS" />
+                        TextColor="White" Text="GPS" Command="{Binding GetGPS}"  />
             <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
-                        TextColor="White" Text="Calendar" />
+                        TextColor="White" Text="Calendar" Command="{Binding GetContacts}"  />
             <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
-                        TextColor="White" Text="Contacts" />
+                        TextColor="White" Text="Contacts"  />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

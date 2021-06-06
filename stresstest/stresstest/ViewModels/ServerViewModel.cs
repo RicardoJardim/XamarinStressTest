@@ -22,6 +22,7 @@ namespace stresstest.ViewModels
 
         //    }
         //}
+        private static FileService fileService = new FileService();
 
         public ICommand CreateViews
         {
@@ -53,7 +54,7 @@ namespace stresstest.ViewModels
 
         public ServerViewModel()
         {
-
+           
         }
 
         private void AddViews()
@@ -68,8 +69,6 @@ namespace stresstest.ViewModels
 
 
         }
-
-
 
         private async Task<bool> FetchData()
         {
@@ -89,13 +88,17 @@ namespace stresstest.ViewModels
                 ProcessResponse("bank",response);
             });
 
-            return true;
+            return await Task.FromResult(true);
         }
         private void ProcessResponse(string from,string response)
         {
-            Console.WriteLine($"From {from} on {new DateTime()}");
+            _ = Task.Run(async () =>
+            {
+                bool res = await fileService.WriteFile(from, response);
+                Console.WriteLine($"From {from} on {new DateTime()} result {res}");
 
-            //Console.WriteLine(response);
+            });
+            
         }
     }
 }

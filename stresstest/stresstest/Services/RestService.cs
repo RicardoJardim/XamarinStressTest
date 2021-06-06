@@ -42,7 +42,7 @@ namespace stresstest.Services
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
-                return content;
+                return await Task.FromResult(content);
             }
             return null;
         }
