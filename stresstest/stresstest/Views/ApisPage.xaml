@@ -27,9 +27,9 @@
             <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
                         TextColor="White" Text="GPS" Command="{Binding GetGPS}"  />
             <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
-                        TextColor="White" Text="Calendar" Command="{Binding GetContacts}"  />
+                        TextColor="White" Text="Calendar"   />
             <Button BackgroundColor="{StaticResource Primary}" CornerRadius="10"
-                        TextColor="White" Text="Contacts"  />
+                        TextColor="White" Text="Contacts" Command="{Binding GetContacts}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
