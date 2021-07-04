@@ -37,13 +37,17 @@ namespace stresstest.Services
 
         public async Task<string> GetItemAsync(string str)
         {
-            Uri uri = new Uri("https://random-data-api.com/api/"+ str);
+            Uri uri = new Uri("http://192.168.1.112:3000/" + str);
             HttpResponseMessage response = await client.GetAsync(uri);
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(content);
+
                 return await Task.FromResult(content);
             }
+            Console.WriteLine(response.IsSuccessStatusCode);
+
             return null;
         }
     }

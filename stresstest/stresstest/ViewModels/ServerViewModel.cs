@@ -52,7 +52,7 @@ namespace stresstest.ViewModels
 
         private void AddViews()
         {
-            for (int i = 1; i <= 1000; i++)
+            for (int i = 1; i <= 500; i++)
             {
                 Views.Add(i);
 
@@ -63,7 +63,7 @@ namespace stresstest.ViewModels
 
         private void AddBtns()
         {
-            for (int i = 1; i <= 1000; i++)
+            for (int i = 1; i <= 500; i++)
             {
                 Btns.Add(i);
 
@@ -79,13 +79,13 @@ namespace stresstest.ViewModels
 
             _ = Task.Run(async () =>
               {
-                  var response = await restService.GetItemAsync("users/random_user?size=100");
+                  var response = await restService.GetItemAsync("users?size=100");
                   ProcessResponse("users",response);
               });
 
            _ =  Task.Run(async () =>
             {
-                var response = await restService.GetItemAsync("bank/random_bank?size=100");
+                var response = await restService.GetItemAsync("banks?size=100");
                 ProcessResponse("bank",response);
             });
 
